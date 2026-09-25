@@ -4,70 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexandre Collegia - Accueil</title>
-    <!-- Balises SEO pour Google -->
-    <meta name="description" content="Portfolio académique d'Alexandre Collegia. Étudiant en Mathématiques et Informatique, préparation à l'Agrégation. Cours, TIPE et projets.">
-    <meta name="keywords" content="Alexandre Collegia, mathématiques, informatique, agrégation, portfolio, TIPE, LaTeX, cours, ENS">
-    <meta name="author" content="Alexandre Collegia">
+    <meta name="description" content="Espace académique d'Alexandre Collegia : cours, écriture, exercices, TIPE et corrigés de l'ENS de Lyon.">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #f4f6f8;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
+            padding: 40px 20px;
+        }
+
+        .conteneur {
+            margin: 0 auto;
+            max-width: 760px;
+        }
+
+        .entete {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 40px;
             text-align: center;
         }
-        .boite-principale {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 20px;
-        }
+
         h1 {
             color: #2c3e50;
-            margin-top: 0;
+            margin: 0 0 10px;
         }
+
         .sous-titre {
-            font-size: 1.1em;
             color: #555;
-            margin-bottom: 25px;
+            margin: 0 0 25px;
         }
+
         .alerte-chantier {
             background-color: #fff3cd;
-            color: #856404;
             border: 1px solid #ffeeba;
-            padding: 15px;
             border-radius: 8px;
+            color: #856404;
             font-weight: bold;
-            margin-bottom: 20px;
+            padding: 15px;
         }
-        .prochainement {
-            font-style: italic;
+
+        .grille {
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bloc {
+            background-color: white;
+            border: 1px solid #e2e6ea;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            color: #333;
+            display: block;
+            min-height: 150px;
+            padding: 24px;
+            text-decoration: none;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .bloc:hover,
+        .bloc:focus-visible {
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .bloc h2 {
+            color: #2c3e50;
+            font-size: 1.25rem;
+            margin: 0 0 10px;
+        }
+
+        .bloc p {
             color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .sous-sections {
+            color: #777;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        .prochainement {
+            color: #666;
+            font-style: italic;
+            margin: 25px 0 0;
+            text-align: center;
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .entete {
+                padding: 30px 20px;
+            }
+
+            .grille {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="conteneur">
+        <header class="entete">
+            <h1>Alexandre Collegia</h1>
+            <p class="sous-titre">Étudiant en Mathématiques à l'UGA Grenoble</p>
+            <div class="alerte-chantier">🚧 Site actuellement en construction 🚧</div>
+        </header>
 
-    <div class="boite-principale">
-        <h1>Alexandre Collegia</h1>
-        <p class="sous-titre">Étudiant en Mathématiques à l'UGA Grenoble</p>
-        
-        <div class="alerte-chantier">
-            🚧 Site actuellement en construction 🚧
-        </div>
+        <main class="grille">
+            <a class="bloc" href="#cours" id="cours">
+                <h2>📚 Cours</h2>
+                <p>Mes cours au format PDF, organisés par matière.</p>
+                <div class="sous-sections">Mathématiques · Informatique · Préparation concours</div>
+            </a>
 
-        <p>L'objectif de cet espace est de constituer mon portfolio académique et de documenter mon travail en mathématiques et en programmation.</p>
-        
-        <p class="prochainement">
-            ⏳ Prochainement : mise à disposition de mes cours, exos et TIPE rédigés en LaTeX, directement téléchargeables au format PDF.
-        </p>
+            <a class="bloc" href="#ecriture" id="ecriture">
+                <h2>✒️ Poésie / Écriture</h2>
+                <p>Un espace pour mes textes et mes réflexions.</p>
+                <div class="sous-sections">Poèmes · Nouvelles · Pamphlets</div>
+            </a>
+
+            <a class="bloc" href="#exercices" id="exercices">
+                <h2>∑ Exercices</h2>
+                <p>Des exercices de mathématiques classés par thème.</p>
+                <div class="sous-sections">Analyse · Algèbre · Probabilités</div>
+            </a>
+
+            <a class="bloc" href="#tipe" id="tipe">
+                <h2>🔬 TIPE</h2>
+                <p>Mes quatre travaux d'initiative personnelle encadrée.</p>
+                <div class="sous-sections">TIPE 1 · TIPE 2 · TIPE 3 · TIPE 4</div>
+            </a>
+
+            <a class="bloc" href="#concours" id="concours">
+                <h2>🏛️ Corrigés ENS de Lyon</h2>
+                <p>Corrigés des seconds concours de l'ENS de Lyon.</p>
+                <div class="sous-sections">Mathématiques · Informatique · Classement par année</div>
+            </a>
+        </main>
+
+        <p class="prochainement">⏳ Les documents seront ajoutés prochainement.</p>
     </div>
-
 </body>
 </html>
